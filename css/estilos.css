@@ -1,0 +1,163 @@
+ *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif; 
+ }
+ body{
+ 		background: #ffffff;
+ }
+ header{
+ 		background:linear-gradient(
+ 			rgba(0,0,0,.6),
+ 			rgba(0,0,0,.2),
+ 			rgba(0,0,0,.6)
+ 			), url('../img/header.jpg'); 
+ 		width: 100%;
+ 		height: 100vh;
+ 		background-size: cover;
+ 		background-position: center;
+ }
+ 
+
+ /* MENU */
+ nav{
+ 	position: fixed;
+ 	width: 100%;
+ }
+ nav ul{
+		text-align: center;
+		list-style: none;
+		margin-top: 25px;
+ }
+
+ nav ul li{
+ 	display: inline-block;
+ 	padding: 20px;
+ 	transition: all .3s ease-in;
+ }
+nav ul li:hover{
+	transform: scale(1.1);
+	
+}
+	
+ nav ul li a{
+ 	text-decoration: none;
+ 	color: #fff;
+ 	font-size: 24px;
+ }
+ 
+nav ul li:hover a{
+	border-bottom: 1px solid #fff;
+}
+
+#acceso{
+	outline: auto;
+}
+
+/* HEADER */
+
+.contenedor{
+	width: 80%;
+	margin: 0 auto;
+}
+
+.contenedortitulo{
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+}
+
+.contenedortitulo h1{
+	font-size: 48px;
+	color: #fff;
+	border: 10px double #fff;
+	padding: 70px 50px;
+	font-family: 'Martel Sans', sans-serif;
+}
+
+
+/* PRINCIPAL */
+
+article{
+	padding-top: 50px;
+	text-align: center;
+	border-bottom: 5px dotted gray;
+	margin-bottom: 20px;
+}
+
+article h3{
+	font-size: 32px;
+	padding: 0 0 30px 0;
+}
+
+article p{
+	font-size: 18px;
+	margin-bottom: 30px;
+}
+
+
+/* Seccion Contacto */
+
+ .contacto{
+ 	background: url('../img/llamada.jpg');
+ 	width: 100%;
+ 	height: auto;
+ 	background-position: center;
+ 	background-size: cover;
+ 	background-attachment: fixed;
+ 	padding: 20px 0;
+ }
+
+h1{
+	text-align: center;
+	font-size: 1em;
+ 	color: #fff;
+}
+
+fieldset{
+	display: inline-block;
+}
+
+ form{
+	margin-bottom: 20px;
+ 	text-align: center;
+	font-size: 1em;
+ 	color: #fff;
+ 	padding-top: 20px;
+ }
+
+form p label{
+	display:inline-block;
+	color: #fff;
+}
+
+ form input[type="submit"]{
+	padding: 10px 20px;
+	margin-top: 20px;
+ 	border: none;
+ 	background: #ffa630;
+ 	color: #fff;
+ 	font-size: 1em;
+ 	border-radius: 2px; 
+	transition: all .3s ease;
+ }
+
+ form input[type="submit"]:hover{
+ 	transform: scale(1.1);
+ }
+
+/* Footer */
+
+footer{
+	background: #152537;
+	height: 50px;
+	text-align: center;
+	padding-top: 15px;
+}
+
+footer p{
+	color: #fff;
+	box-sizing: border-box;
+}
