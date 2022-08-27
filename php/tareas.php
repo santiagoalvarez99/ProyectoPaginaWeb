@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-	<html lang="en">
+	<html lang="es">
 	<head>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
@@ -11,9 +11,9 @@
 		<hr style="border-top:1px dotted #ccc;"/>
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
-			<form method="POST" class="form-inline" action="add_query.php">
+			<form method="POST" class="form-inline" action="agregar_tarea.php">
 				<input type="text" class="form-control" name="task" required/>
-				<button class="btn btn-primary form-control" name="add">Add Task</button>
+				<button class="btn btn-primary form-control" name="add">Agregar Nueva Tarea</button>
 			</form>
 		</div>
 		<br /><br /><br />
@@ -21,30 +21,30 @@
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>Task</th>
-					<th>Status</th>
-					<th>Action</th>
+					<th>Tarea</th>
+					<th>Estado</th>
+					<th>Acción</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php
 					require 'conn.php';
-					$query = $conn->query("SELECT * FROM `task` ORDER BY `task_id` ASC");
+					$query = $conn->query("SELECT * FROM `tareas` ORDER BY `id` ASC");
 					$count = 1;
 					while($fetch = $query->fetch_array()){
 				?>
 				<tr>
 					<td><?php echo $count++?></td>
-					<td><?php echo $fetch['task']?></td>
-					<td><?php echo $fetch['status']?></td>
+					<td><?php echo $fetch['tarea']?></td>
+					<td><?php echo $fetch['estado']?></td>
 					<td colspan="2">
 						<?php
-							if($fetch['status'] != "Done"){
+							if($fetch['status'] != 1){
 								echo 
-								'<a href="update_task.php?task_id='.$fetch['task_id'].'" class="btn btn-success"><span class="glyphicon glyphicon-check"></span></a> |';
+								'<a href="actualizar_tarea.php?task_id='.$fetch['task_id'].'" class="btn btn-success"><span class="glyphicon glyphicon-check"></span></a> |';
 							}
 						?>
-						<a href="delete_query.php?task_id=<?php echo $fetch['task_id']?>" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
+						<a href="borrar_tarea.php?task_id=<?php echo $fetch['task_id']?>" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
 					</td>
 				</tr>
 				<?php

@@ -5,6 +5,7 @@
 		$task_id = $_GET['task_id'];
  
 		$conn->query("DELETE FROM `tareas` WHERE `id` = $task_id") or die(mysqli_errno($conn));
-		header("location: index.php");
+		header("Location: tareas.php");
 	}	
+	$conn->close();
 ?>

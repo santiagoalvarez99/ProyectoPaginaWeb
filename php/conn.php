@@ -2,6 +2,6 @@
 	$conn = new mysqli("localhost", "root", "", "tareas_db");
  
 	if(!$conn){
-		die("Error: Cannot connect to the database");
+		die("Error: No fue posible la conexión a la base de datos");
 	}
 ?>
