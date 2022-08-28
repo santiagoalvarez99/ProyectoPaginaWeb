@@ -21,26 +21,26 @@
             <p>     
                 <input class="form-control" type =  "submit" id = "btn" value = "Login" />  
             </p>  
-        </form> 
-        </div> 
+        </form>
+    </div> 
     </div>   
     <script>  
             function validation()  
             {  
-                var id=document.f1.user.value;  
-                var ps=document.f1.pass.value;  
-                if(id.length=="" && ps.length=="") {  
-                    alert("Nombre de Usuario y contraseña están vacíos, llene todos los campos");  
+                var user=document.getElementById("user").value;  
+                var ps=document.getElementById("pass").value;  
+                if(user.length=="" && ps.length=="") {  
+                    alert("Los campos Nombre de Usuario y contraseña están vacíos, llene todos los campos");  
                     return false;  
                 }  
                 else  
                 {  
-                    if(id.length=="") {  
-                        alert("Nombre de Usuario está vacío");  
+                    if(user.length=="") {  
+                        alert("El campo Nombre de Usuario está vacío");  
                         return false;  
                     }   
                     if (ps.length=="") {  
-                        alert("Contraseña está vacío");  
+                        alert("El campo Contraseña está vacío");  
                         return false;  
                     }  
                 }                             

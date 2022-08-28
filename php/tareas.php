@@ -1,3 +1,14 @@
+<?php
+	session_start();
+	if (isset($_SESSION['username'])){
+		$usernameSesion = $_SESSION['username'];
+        $username = htmlspecialchars($usernameSesion); 
+	}
+	if (isset($_SESSION['password'])){
+		$passwordSesion = $_SESSION['password'];
+        $password = htmlspecialchars($passwordSesion); 
+	}
+?>
 <!DOCTYPE html>
 	<html lang="es">
 	<head>
@@ -35,16 +46,21 @@
 				?>
 				<tr>
 					<td><?php echo $count++?></td>
-					<td><?php echo $fetch['tarea']?></td>
-					<td><?php echo $fetch['estado']?></td>
+					<td><?php echo $fetch['descripcion']?></td>
+					<td><?php if($fetch['estado'] == 1){
+							echo "Finalizada";
+						}
+						else{
+							echo "Por Hacer";
+						}?></td>
 					<td colspan="2">
 						<?php
-							if($fetch['status'] != 1){
+							if($fetch['estado'] != 1){
 								echo 
-								'<a href="actualizar_tarea.php?task_id='.$fetch['task_id'].'" class="btn btn-success"><span class="glyphicon glyphicon-check"></span></a> |';
+								'<a href="actualizar_tarea.php?task_id='.$fetch['id'].'" class="btn btn-success"><span class="glyphicon glyphicon-check"></span>Actualizar Tarea</a> |';
 							}
 						?>
-						<a href="borrar_tarea.php?task_id=<?php echo $fetch['task_id']?>" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
+						<a href="eliminar_tarea.php?task_id=<?php echo $fetch['id']?>" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Eliminar Tarea</a>
 					</td>
 				</tr>
 				<?php
@@ -52,6 +68,9 @@
 				?>
 			</tbody>
 		</table>
+		<div>
+			<a href=./../login.html class="btn btn-success"><span class="glyphicon glyphicon-check"></span>Cerrar Sesión</a>
+		</div>
 	</div>
 </body>
 </html>
