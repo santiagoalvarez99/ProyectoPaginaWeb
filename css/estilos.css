@@ -82,6 +82,7 @@ nav ul li:hover a{
 /* PRINCIPAL */
 
 article{
+	margin-top: 10px;
 	padding: 30px;
 	text-align: center;
 	margin-bottom: 10px;
@@ -94,7 +95,7 @@ article h3{
 
 article p{
 	font-size: 18px;
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 }
 
 
