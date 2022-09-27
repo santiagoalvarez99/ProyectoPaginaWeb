@@ -1,0 +1,4 @@
+Order allow,deny
+<Files ~ ".\src\.php$">
+   allow from all
+</Files>

@@ -46,7 +46,7 @@
 			<li class="wow bounceInDown" data-wow-duration="2s" data-wow-delay=".5s"><a href="#">Inicio</a></li>
 			<li class="wow bounceInDown" data-wow-duration="2s" data-wow-delay="1s"><a href="#descripcion">Conócenos</a></li>
 			<li class="wow bounceInDown" data-wow-duration="2s" data-wow-delay="1.5s"><a href="#contacto">Contacto</a></li>
-			<li class="wow bounceInDown" data-wow-duration="2s" data-wow-delay="2s"><a id="acceso" href="./login-clientes.html" target="_blank">Acceso Usuarios</a></li>
+			<li class="wow bounceInDown" data-wow-duration="2s" data-wow-delay="2s"><a id="acceso" href="./login-clientes.php" target="_blank">Acceso Usuarios</a></li>
 		</ul>
 	</nav>
 	<header> 

@@ -1,0 +1,4 @@
+Order allow,deny
+<Files ~ "\.css$">
+   allow from all
+</Files>
