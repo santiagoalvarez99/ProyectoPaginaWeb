@@ -1,17 +1,13 @@
 <?php      
     include('conn.php');
     session_start();
-    if (isset($_SESSION['username'])){
-		$usernameSesion = $_SESSION['username'];
-        $username = htmlspecialchars($usernameSesion); 
+    if (isset($_SESSION['username']) && isset($_SESSION['password'])){
+		goto inicio;
 	}
 	else {
 		header("Location: error.php");
 	}
-	if (isset($_SESSION['password'])){
-		$passwordSesion = $_SESSION['password'];
-        $password = htmlspecialchars($passwordSesion); 
-	}
+    inicio:
     $username = $_POST['user'];  
     $password = $_POST['pass'];
     $username = stripcslashes($username);  
