@@ -3,8 +3,8 @@
 	session_start();
 	$username = $_SESSION['username'];
 	$password = $_SESSION['password'];
-	/* echo $username;
-	echo $password; */ //linea de debug
+	/*echo $username;
+	echo $password;*/  //linea de debug
 	if (isset($username) && isset($password)){
 		$Object = new DateTime();  
 		$Object->setTimezone(new DateTimeZone('America/Argentina/Buenos_Aires'));

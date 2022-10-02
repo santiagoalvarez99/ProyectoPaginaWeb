@@ -22,7 +22,7 @@
     $row = mysqli_fetch_array($resultado, MYSQLI_ASSOC);  
     $count = mysqli_num_rows($resultado);
     $_SESSION['username'] = $username;
-    $_SESSION['password'] = $password;
+    //$_SESSION['password'] = $password;
     if($count == 1){
         $query2 = "SELECT password FROM usuarios WHERE nombre_user= ?";
         $sentencia2 = $conn->prepare($sql);
@@ -31,6 +31,7 @@
         $resultado2 = $sentencia2->get_result();
         $row = mysqli_fetch_array($resultado2, MYSQLI_ASSOC);
         $hash = $row['password'];
+        $_SESSION['password'] = $hash;
         if(password_verify($password, $hash )){
             echo "<h1><center> Ingreso Válido </center></h1>";
             header("Location: tareas.php");

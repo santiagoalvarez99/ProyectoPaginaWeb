@@ -19,7 +19,11 @@
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
 	</head>
 	<script>
-
+		function enviar()
+		{
+		// Esta es la variable que vamos a pasar
+			var descripcion=$("#descripcion").val();
+	}
 	</script>
 	<body>
 	<div class="col-md-3">
@@ -45,6 +49,8 @@
 					<th>#</th>
 					<th>Tarea</th>
 					<th>Estado</th>
+					<th>Fecha de Creación</th>
+					<th>Fecha de Modificación</th>
 					<th>Acción</th>
 				</tr>
 			</thead>
@@ -57,18 +63,26 @@
 				?>
 				<tr>
 					<td><?php echo $count++?></td>
-					<td><?php echo $fetch['descripcion']?></td>
+					<td><?php if($fetch['estado'] == 1){?>
+							<?php echo $fetch['descripcion'];
+						}
+						else{?>
+							<input id="descripcion" type="text" name="descripcion" placeholder="<?php echo $fetch['descripcion']?>"/>
+						<?php } ?></td>
 					<td><?php if($fetch['estado'] == 1){
 							echo "Finalizada";
 						}
 						else{
 							echo "Por Hacer";
 						}?></td>
-					<td colspan="2">
+					<td><?php echo $fetch['fecha_creacion']?></td>
+					<td><?php echo $fetch['fecha_modificacion']?></td>
+					<td colspan="4">
 						<?php
 							if($fetch['estado'] != 1){
 								echo 
-								'<a href="actualizar_tarea.php?task_id='.$fetch['id'].'" class="btn btn-success"><span class="glyphicon glyphicon-check"></span>Actualizar Tarea</a> |';
+								'<a href="actualizar_tarea.php?task_id='.$fetch['id'].'&descripcion='.$_POST['descripcion'].'" class="btn btn-primary"><span class="glyphicon glyphicon-check"></span>Actualizar Tarea</a>';
+								echo '<a href="cambiar_estado_tarea.php?task_id='.$fetch['id'].'" class="btn btn-success"><span class="glyphicon glyphicon-check"></span>Finalizar Tarea</a>';
 							}
 						?>
 						<a href="eliminar_tarea.php?task_id=<?php echo $fetch['id']?>" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Eliminar Tarea</a>
