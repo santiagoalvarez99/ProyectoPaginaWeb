@@ -22,32 +22,26 @@
 	<script>
 		function actualizar_tarea(fetch_id)
 		{
-		// Esta es la variable que vamos a pasar
-			debugger;
+		//debugger;
 			var descripcion = document.getElementById('descripcion').value;
 			var data = {
 				descripcion: descripcion,
 				task_id: fetch_id
 			};
-			/*$(document).ready(function() {
-    			$('#loginform').submit(function(e) {
-        		e.preventDefault();*/
-       			$.ajax({
+			$.ajax({
             		type: "POST",
             		url: 'actualizar_tarea.php',
             		data: data,
             		success: function(response) {
-                		// var jsonData = JSON.parse(response);
-						console.log('success' + response);
-                		// user is logged in successfully in the back-end
-                		// let's redirect
+                		console.log('success' + response);
+						alert("Cambio de descripcion exitoso")
            			}
     			});
 		};
 	</script>
 	<body>
 	<div class="col-md-3">
-		<p>Usuario: <?php echo $username?></p>
+		<p class="mb-0"><strong>Usuario: <?php echo $username?></p></strong>
 		<form action="cerrar_sesion.php" method="post">
 			<input type="submit" class="btn btn-danger" value="Cerrar Sesión">
 		</form>
@@ -103,7 +97,7 @@
 							if($fetch['estado'] != 1){
 								echo 
 								// '<a href="actualizar_tarea.php?task_id='.$fetch['id'].'&descripcion='.$_POST['descripcion'].'" class="btn btn-primary"><span class="glyphicon glyphicon-check"></span>Actualizar Tarea</a>';
-								'<button type="button" onclick="actualizar_tarea(' . $fetch['id'] . ');"><span class="glyphicon glyphicon-check"></span>Actualizar Tarea</button>';
+								'<button type="button" class="btn btn-primary" onclick="actualizar_tarea(' . $fetch['id'] . ');"><span class="glyphicon glyphicon-check"></span>Actualizar Tarea</button>';
 								echo '<a href="cambiar_estado_tarea.php?task_id='.$fetch['id'].'" class="btn btn-success"><span class="glyphicon glyphicon-check"></span>Finalizar Tarea</a>';
 							}
 						?>
@@ -118,6 +112,3 @@
 	</div>
 </body>
 </html>
-
-let desc = getELbyid("desc")
-// ajax

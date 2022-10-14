@@ -4,9 +4,10 @@ mb_internal_encoding('UTF-8');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception as ExcPHPMailer;
 
-try {
+//try {
+    require_once 'C:\xampp\htdocs\ProyectoPaginaWeb\php\contacto.php';
     if ($_POST !== array()) {
-        $con = new Contacto();
+        $con = new contacto();
         $con->setNombre(isset($_POST['txt_nombre']) ? $_POST['txt_nombre'] : '');
         $con->setApellido(isset($_POST['txt_apellido']) ? $_POST['txt_apellido'] : '');
         $con->setEmail(isset($_POST['txt_email']) ? $_POST['txt_email'] : '');
@@ -15,12 +16,12 @@ try {
         $con->isNombre(1, 100);
         $con->isApellido(1, 100);
         $con->isEmail(1, 100);
-        $con->isMensaje(1, 1000);
+        //$con->isMensaje(1, 1000);
         if ($con->getErroresTotal() !== 0) {
             throw new \Exception($con->getErroresMensaje());
         }
 
-        require_once('lib/PHPMailer-6.5.3/PHPMailer-master/src/PHPMailer.php');
+       /* require_once('lib/PHPMailer-6.5.3/PHPMailer-master/src/PHPMailer.php');
         require_once('lib/PHPMailer-6.5.3/PHPMailer-master/src/SMTP.php');
         require_once('lib/PHPMailer-6.5.3/PHPMailer-master/src/Exception.php');
         $mail = new PHPMailer(true);                               // true indica que se lanzan excepciones
@@ -46,9 +47,9 @@ try {
             . 'Nombre: ' . $con->getNombre() . "\r\n"
             . 'Email: ' . $con->getEmail() . "\r\n"
             . 'Mensaje: ' . $con->getMensaje() . "\r\n";
-        $mail->Send();
+        $mail->Send();*/
 
-        header('Location: mensaje-enviado.html', true, 302);
+        header('Location: ../mensaje-enviado.php', true, 302);
         exit;
     } else {
         $con = new Contacto();
@@ -56,10 +57,10 @@ try {
         $con->setEmail('');
         $con->setMensaje('');
     }
-} catch (ExcPHPMailer $e) {
+/*} /*catch (ExcPHPMailer $e) {
       $mensaje = $e->getMessage();
 } catch (\Exception $e) {
       $mensaje = $e->getMessage();
-}
+}*/
 
 ?>

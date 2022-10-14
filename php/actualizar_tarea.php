@@ -12,12 +12,7 @@
 		if($_POST['task_id'] != ""){
 			$descripcion_tarea = $_POST['descripcion'];
 			$task_id = $_POST['task_id'];
-			echo $descripcion_tarea.$task_id;
-		}
-	}
-
-	json_encode('return_from_php');
-			/*$sql = "UPDATE `tareas` SET `fecha_modificacion` = ?, `descripcion` = ? WHERE `id` = ?";
+			$sql = "UPDATE `tareas` SET `fecha_modificacion` = ?, `descripcion` = ? WHERE `id` = ?";
     		$sentencia = $conn->prepare($sql);
     		$sentencia->bind_param('ssi', $fecha_modificacion, $descripcion_tarea, $task_id);
     		$sentencia->execute();
@@ -30,5 +25,5 @@
 	}
 	else {
 		header("Location: error.php");
-	}*/
+	}
 ?>

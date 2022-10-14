@@ -68,14 +68,14 @@ class Contacto
     {
         return $this->mensaje;
     }
-    public function isMensaje($min, $max)
+    /*public function isMensaje($min, $max)
     {
         if (mb_strlen($this->mensaje) >= $min && mb_strlen($this->mensaje) <= $max) {
             return true;
         }
         $this->setError('Mensaje: requerido, hasta ' . $max . ' caracteres.');
         return false;
-    }
+    }*/
 
     private function setError($valor)
     {

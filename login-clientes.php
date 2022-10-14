@@ -9,7 +9,7 @@
 	<div class="col-md-6 well"> 
     <div class="col-md-8" id = "frm">  
         <h1>Inicio de Sesión</h1>  
-        <form class="form-inline" action = "./php/autenticacion.php" onsubmit = "return validation()" method = "POST">  
+        <form class="form-inline" action = "./php/autenticacion.php" onsubmit = "validation()" method = "POST">  
             <p>  
                 <label> Nombre de Usuario: </label>  
                 <input class="form-control" type = "text" id ="user" name  = "user" />  

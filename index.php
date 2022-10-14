@@ -13,10 +13,10 @@
 	<script>  
 		function validation()  
 		{  
-			var nombre=document.f1.txt_nombre.value;  
-			var apellido=document.f1.txt_apeliido.value;  
-			var email=document.f1.txt_email.value;
-
+			var nombre=document.getElementById('txt_nombre').value;  
+			var apellido=document.getElementById('txt_apellido').value;  
+			var email=document.getElementById('txt_email').value;
+			debugger;
 			if(nombre.length=="" && apellido.length=="" && email.length=="") {  
 				alert("Por favor, llene todos los campos");  
 				return false;  
@@ -70,7 +70,7 @@
 		<div class="contacto">
 			<div class="contenedor">
 				<h1>Contacto</h1>
-				<form class="wow fadeInRight" data-wow-duration="3s" action="./php/envia.php" method="post">
+				<form class="wow fadeInRight" data-wow-duration="3s" action="./php/envia.php" method="post" novalidate onsubmit="validation()">
 						<div><p>Para realizar una contratación de nuestra APP, complete el siguiente formulario</p></div>
 						<div><p>Todos los campos marcados con * son requeridos.</p></div>
 						<br>
@@ -82,7 +82,7 @@
 							<br>
 							<div><label>Email*: <input type="email" id="txt_email" name="txt_email" value="" required maxlength="100"></label></div>
 							<br>
-							<div><textarea id="txt_mensaje" name="comentario" rows="5" cols="50">Escribe aquí tu comentario: </textarea></div>
+							<div><textarea id="txt_mensaje" name="txt_mensaje" rows="5" cols="50">Escribe aquí tu comentario: </textarea></div>
 						</fieldset>
 						<div><input type="submit" name="btn_enviar" value="Enviar"></div>
 				</form>
