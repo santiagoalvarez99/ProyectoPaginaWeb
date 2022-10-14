@@ -9,12 +9,14 @@
 		$Object = new DateTime();  
 		$Object->setTimezone(new DateTimeZone('America/Argentina/Buenos_Aires'));
 		$fecha_modificacion = $Object->format("Y-m-d G:i:s");
-		if($_GET['task_id'] != ""){
-			$descripcion_tarea = $_GET['descripcion'];
-			$task_id = $_GET['task_id'];
-			echo $descripcion_tarea;
+		if($_POST['task_id'] != ""){
+			$descripcion_tarea = $_POST['descripcion'];
+			$task_id = $_POST['task_id'];
+			echo $descripcion_tarea.$task_id;
 		}
 	}
+
+	json_encode('return_from_php');
 			/*$sql = "UPDATE `tareas` SET `fecha_modificacion` = ?, `descripcion` = ? WHERE `id` = ?";
     		$sentencia = $conn->prepare($sql);
     		$sentencia->bind_param('ssi', $fecha_modificacion, $descripcion_tarea, $task_id);

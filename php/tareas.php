@@ -17,13 +17,33 @@
 	<head>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	</head>
 	<script>
-		function enviar()
+		function actualizar_tarea(fetch_id)
 		{
 		// Esta es la variable que vamos a pasar
-			var descripcion=$("#descripcion").val();
-	}
+			debugger;
+			var descripcion = document.getElementById('descripcion').value;
+			var data = {
+				descripcion: descripcion,
+				task_id: fetch_id
+			};
+			/*$(document).ready(function() {
+    			$('#loginform').submit(function(e) {
+        		e.preventDefault();*/
+       			$.ajax({
+            		type: "POST",
+            		url: 'actualizar_tarea.php',
+            		data: data,
+            		success: function(response) {
+                		// var jsonData = JSON.parse(response);
+						console.log('success' + response);
+                		// user is logged in successfully in the back-end
+                		// let's redirect
+           			}
+    			});
+		};
 	</script>
 	<body>
 	<div class="col-md-3">
@@ -78,10 +98,12 @@
 					<td><?php echo $fetch['fecha_creacion']?></td>
 					<td><?php echo $fetch['fecha_modificacion']?></td>
 					<td colspan="4">
+						
 						<?php
 							if($fetch['estado'] != 1){
 								echo 
-								'<a href="actualizar_tarea.php?task_id='.$fetch['id'].'&descripcion='.$_POST['descripcion'].'" class="btn btn-primary"><span class="glyphicon glyphicon-check"></span>Actualizar Tarea</a>';
+								// '<a href="actualizar_tarea.php?task_id='.$fetch['id'].'&descripcion='.$_POST['descripcion'].'" class="btn btn-primary"><span class="glyphicon glyphicon-check"></span>Actualizar Tarea</a>';
+								'<button type="button" onclick="actualizar_tarea(' . $fetch['id'] . ');"><span class="glyphicon glyphicon-check"></span>Actualizar Tarea</button>';
 								echo '<a href="cambiar_estado_tarea.php?task_id='.$fetch['id'].'" class="btn btn-success"><span class="glyphicon glyphicon-check"></span>Finalizar Tarea</a>';
 							}
 						?>
@@ -96,3 +118,6 @@
 	</div>
 </body>
 </html>
+
+let desc = getELbyid("desc")
+// ajax
