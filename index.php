@@ -70,7 +70,7 @@
 		<div class="contacto">
 			<div class="contenedor">
 				<h1>Contacto</h1>
-				<form class="wow fadeInRight" data-wow-duration="3s" action="./php/envia.php" method="post" novalidate onsubmit="validation()">
+				<form class="wow fadeInRight" data-wow-duration="3s" action="./php/envia.php" method="post" onsubmit="return validation()">
 						<div><p>Para realizar una contratación de nuestra APP, complete el siguiente formulario</p></div>
 						<div><p>Todos los campos marcados con * son requeridos.</p></div>
 						<br>
