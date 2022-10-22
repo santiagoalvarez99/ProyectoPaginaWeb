@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception as ExcPHPMailer;
 
 //try {
-    require_once 'C:\xampp\htdocs\ProyectoPaginaWeb\php\contacto.php';
+    require_once 'contacto.php';
     if ($_POST !== array()) {
         $con = new contacto();
         $con->setNombre(isset($_POST['txt_nombre']) ? $_POST['txt_nombre'] : '');

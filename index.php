@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Lista de Tareas - ToDo List APP</title>
-	<link href="https://fonts.googleapis.com/css?family=Martel+Sans|Roboto&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Martel+Sans%7CRoboto&display=swap" rel="stylesheet"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/estilos.css">
 	<link rel="stylesheet" href="css/animate.css">
 	<script src="js/wow.min.js"></script>
@@ -65,7 +66,6 @@
 					<p class="wow rotateInDownRight" data-wow-duration="3s">ToDoList es una aplicación organizadora de tareas basada en la nube. Permite a los usuarios gestionar sus tareas desde cualquier lugar. Organiza tus tareas, listas y recordatorios en una aplicación fácil de tareas pendientes. ToDoList se sincroniza de manera fluida en todos tus dispositivos, haciendo que tu lista de tareas pendientes sea accesible en todos lados.</p>
 				</article>
 			</div>
-		</div>
 		</div>
 		<div class="contacto">
 			<div class="contenedor">

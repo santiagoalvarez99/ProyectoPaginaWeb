@@ -15,10 +15,13 @@
 <!DOCTYPE html>
 	<html lang="es">
 	<head>
+		<title>Tareas - ToDo List APP</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	</head>
+	<body>
 	<script>
 		function actualizar_tarea(fetch_id)
 		{
@@ -35,28 +38,28 @@
             		success: function(response) {
                 		console.log('success' + response);
 						alert("Cambio de descripcion exitoso")
+						window.location.reload();
            			}
     			});
 		};
 	</script>
-	<body>
 	<div class="col-md-3">
-		<p class="mb-0"><strong>Usuario: <?php echo $username?></p></strong>
+		<strong>Usuario: <?php echo $username?></strong>
 		<form action="cerrar_sesion.php" method="post">
 			<input type="submit" class="btn btn-danger" value="Cerrar Sesión">
 		</form>
 	</div>
 	<div class="col-md-6 well">
 		<h3 class="text-primary">PHP - Simple To Do List App</h3>
-		<hr style="border-top:1px dotted #ccc;"/>
+		<hr style="border-top:1px dotted #ccc;">
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
 			<form method="POST" class="form-inline" action="agregar_tarea.php">
-				<input type="text" class="form-control" name="task" required/>
+				<input type="text" class="form-control" name="task" required>
 				<button class="btn btn-primary form-control" name="add">Agregar Nueva Tarea</button>
 			</form>
 		</div>
-		<br /><br /><br />
+		<br>
 		<table class="table">
 			<thead>
 				<tr>
@@ -81,7 +84,7 @@
 							<?php echo $fetch['descripcion'];
 						}
 						else{?>
-							<input id="descripcion" type="text" name="descripcion" placeholder="<?php echo $fetch['descripcion']?>"/>
+							<input id="descripcion" type="text" name="descripcion" placeholder="<?php echo $fetch['descripcion']?>">
 						<?php } ?></td>
 					<td><?php if($fetch['estado'] == 1){
 							echo "Finalizada";
@@ -92,16 +95,14 @@
 					<td><?php echo $fetch['fecha_creacion']?></td>
 					<td><?php echo $fetch['fecha_modificacion']?></td>
 					<td colspan="4">
-						
-						<?php
-							if($fetch['estado'] != 1){
-								echo 
-								// '<a href="actualizar_tarea.php?task_id='.$fetch['id'].'&descripcion='.$_POST['descripcion'].'" class="btn btn-primary"><span class="glyphicon glyphicon-check"></span>Actualizar Tarea</a>';
-								'<button type="button" class="btn btn-primary" onclick="actualizar_tarea(' . $fetch['id'] . ');"><span class="glyphicon glyphicon-check"></span>Actualizar Tarea</button>';
-								echo '<a href="cambiar_estado_tarea.php?task_id='.$fetch['id'].'" class="btn btn-success"><span class="glyphicon glyphicon-check"></span>Finalizar Tarea</a>';
-							}
-						?>
-						<a href="eliminar_tarea.php?task_id=<?php echo $fetch['id']?>" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Eliminar Tarea</a>
+					<?php
+						if($fetch['estado'] != 1){
+							echo 
+							'<button type="button" class="btn btn-primary" onclick="actualizar_tarea(' . $fetch['id'] . ');"><span class="glyphicon glyphicon-check"></span>Actualizar Tarea</button>';
+							echo '<a href="cambiar_estado_tarea.php?task_id='.$fetch['id'].'" class="btn btn-success"><span class="glyphicon glyphicon-check"></span>Finalizar Tarea</a>';
+						}
+					?>
+					<a href="eliminar_tarea.php?task_id=<?php echo $fetch['id']?>" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Eliminar Tarea</a>
 					</td>
 				</tr>
 				<?php

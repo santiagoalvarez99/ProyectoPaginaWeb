@@ -1,4 +1,5 @@
-<html>  
+<!DOCTYPE html>
+<html lang="es">  
 <head>  
     <meta charset="UTF-8">
     <title>Inicio de Sesión - ToDoList</title>
@@ -12,14 +13,14 @@
         <form class="form-inline" action = "./php/autenticacion.php" onsubmit = "validation()" method = "POST">  
             <p>  
                 <label> Nombre de Usuario: </label>  
-                <input class="form-control" type = "text" id ="user" name  = "user" />  
+                <input class="form-control" type = "text" id ="user" name  = "user" >  
             </p>  
             <p>  
                 <label> Contraseña: </label>  
-                <input class="form-control" type = "password" id ="pass" name  = "pass" />  
+                <input class="form-control" type = "password" id ="pass" name  = "pass" >  
             </p>  
             <p>     
-                <input class="form-control" type =  "submit" id = "btn" value = "Login" />  
+                <input class="form-control" type =  "submit" id = "btn" value = "Login" >  
             </p>  
         </form>
     </div> 
