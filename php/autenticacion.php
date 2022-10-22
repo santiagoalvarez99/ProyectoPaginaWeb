@@ -40,6 +40,9 @@
                 echo "<h1><center> Ingreso Válido </center></h1>";
                 header("Location: tareas.php");
             }
+            else{ 
+                echo "<h1> Ingreso Fallido. Usuario o Contraseña inválido.</h1>";  
+            } 
         } 
         else{ 
             echo "<h1> Ingreso Fallido. Usuario o Contraseña inválido.</h1>";  
