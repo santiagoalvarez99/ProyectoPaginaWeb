@@ -94,7 +94,7 @@
 						}?></td>
 					<td><?php echo $fetch['fecha_creacion']?></td>
 					<td><?php echo $fetch['fecha_modificacion']?></td>
-					<td colspan="4">
+					<td>
 					<?php
 						if($fetch['estado'] != 1){
 							echo 
