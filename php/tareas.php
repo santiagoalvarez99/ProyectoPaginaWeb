@@ -84,7 +84,7 @@
 							<?php echo $fetch['descripcion'];
 						}
 						else{?>
-							<input id="descripcion" type="text" name="descripcion" placeholder="<?php echo $fetch['descripcion']?>">
+							<input id="<?php echo 'descripcion'.$count;?>" type="text" name="descripcion" placeholder="<?php echo $fetch['descripcion']?>">
 						<?php } ?></td>
 					<td><?php if($fetch['estado'] == 1){
 							echo "Finalizada";
